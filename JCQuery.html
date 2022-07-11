@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"
+        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <!--Get your own code at fontawesome.com-->
+    <title>mru</title>
+
+</head>
+
+<body>
+    <header class="border-4 border-indigo-500/50">
+
+        <nav class="bg-red-400">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+
+                <a href="#" class="flex items-center">
+                    <img src="img/caída.jpg" class="mr-6 h-1 sm:h-20" alt="Flowbite Logo" />
+                    <span
+                        class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">MovimientoRectilinioUniforme
+                        y Variado</span>
+                </a>
+                <div class="flex items-center justify-start mt-4 mb-4">
+                    <a href="#"
+                        class="px-2 py-1 font-bold bg-red-400 text-white rounded-lg hover:bg-gray-500">desarrollador
+                        web</a>
+                    <div class="mt-2">
+                        <div class="font-light text-gray-600">
+                            <a href="#" class="flex items-center mt-6 mb-6"><img src="img/perfil2.jpg" alt="avatar"
+                                    class="hidden object-cover w-14 h-14 mx-4 rounded-full sm:block">
+                                <h1 class="font-bold text-gray-700 hover:underline">por Xarry</h1>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container mx-auto px-4">
+        <div class="flex items-center">
+            <div class="py-4">formula
+                <img src="img/carro.jpg">
+
+            </div>
+            <div class="py-4" ;>Ejemplo
+                <img src="img/carro2.jpg">
+            </div>
+            <div class="py-4">Caida
+                <img src="img/caída.jpg">
+            </div>
+        </div>
+        <div class="border-4 border-indigo-500/50" style="background-color:rgb(140, 227, 233)">
+
+            <i class='far fa-arrow-alt-circle-down' style='font-size:48px;color:red'></i>
+
+            <div class="grid grid-cols-2 gap-2" style="background-color:rgb(184, 28, 101)">
+                <div>
+                    <p class="text-blue-600/100">M.R.U</p>
+                    <article>
+                        Cuando la trayectoria es recta, hay dos tipos de movimientos que tenemos que comprender y
+                        diferenciar, en función si la aceleración neta es cero o si o lo es.
+                        El M.R.U es el denominado movimiento rectilíneo uniforme, es decir, es un movimiento, en línea
+                        recta,
+                        y como nos dice uniforme, quiere decir que va todo el rato a la misma velocidad,
+                        cuando algo ni aumenta ni disminuye su velocidad, es porque su aceleración es cero.
+                        Observa que cuando afirmamos que la velocidad es constante estamos afirmando que no cambia ni su
+                        valor
+                        (también conodido como módulo, rapidez o celeridad) ni la dirección del movimiento.
+                        <img src="img/formula1.jpg">
+                    </article>
+                    <div>
+                        <P>Calculo de MRU</P>
+
+
+
+
+                    </div><br>
+
+                </div>
+                <!-- ... -->
+                <div style="background-color:blueviolet">
+                    <i class='fas fa-bicycle' style='font-size:36px'></i>
+                    <i class='fas fa-bicycle' style='font-size:48px;color:red'></i>
+                    <img src="img/ejemplo1.png" class="img-thumbnail" alt="">
+                    <img src="img/ejemplo2.png" class="img-thumbnail" alt="">
+
+                </div>
+                <div style="background-color:aliceblue">
+                    <!--Calculo velocidad-->
+                    <div>
+                        <h1>Ingrese La distancia</h1><input type="number" id="distancia" value="">
+                        <h1>Ingrese el Tiempo</h1> <input type="number" id="tiempo" value="">
+                        <br>
+                        <button id="Velocidad">Calcular</button>
+                        <table class="table-fixed " style="table-layout: auto;" id="Calc">
+                            <thead>
+                                <tr>
+                                    <th>Num Ej</th>
+                                    <th>distancia</th>
+                                    <th>Tiempo</th>
+                                    <th>Resultado:Velocidad</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="auxiliar">
+                                <tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="limpiar">Limpiar</button>
+                        <script>
+                            let cont = 0;
+                            $(document).ready(function () {
+                                $("#Velocidad").click(function (e) {
+
+                                    e.preventDefault();
+                                    cont = cont + 1;
+                                    let d = parseInt($("#distancia").val());
+                                    let t = parseInt($("#tiempo").val());
+                                    let r = 0;
+                                    r = d / t;
+                                    $("#Calc").append("<tr><td>" + cont + "</td><td>" + d + "</td><td>" + t + "</td><td>" + r + "</td></tr>")
+                                    $("#distancia").val("");
+                                    $("#tiempo").val("");
+                                });
+                                $("#limpiar").click(function (e) {
+                                    e.preventDefault();
+                                    $("#auxiliar").text("");
+                                });
+                            });
+                        </script>
+                    </div>
+                </div>
+                <!--fin blaco-->
+                <div style="background-color:rgb(96, 156, 209)">
+                    <!--Calculadora y tabla-->
+                    <div>
+                        <h1>Ingrese La Velocidad</h1><input type="number" id="velocidad" value="">
+                        <h1>Ingrese el Tiempo</h1> <input type="number" id="tiempo2" value="">
+                        <br>
+                        <button id="distancia">Calcular Distancia</button>
+                        <table class="table-fixed " style="table-layout: auto;" id="Calc2">
+                            <thead>
+                                <tr>
+                                    <th>Num De Ejecucion</th>
+                                    <th>velocidad</th>
+                                    <th>Tiempo</th>
+                                    <th>Resultado distancia</th>
+
+                                </tr>
+                            </thead>
+                            <tbody id="auxiliar2">
+                                <tr>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="limpiar2">Limpiar</button>
+                        <script>
+                            let cont2 = 0;
+                            $(document).ready(function () {
+                                $("#distancia").click(function (e) {
+
+                                    e.preventDefault();
+                                    cont2 = cont2 + 1;
+                                    let v = parseInt($("#velocidad").val());
+                                    let tem = parseInt($("#tiempo2").val());
+                                    let res = 0;
+                                    res = v * tem;
+                                    $("#Calc2").append("<tr><td>" + cont2 + "</td><td>" + v + "</td><td>" + tem + "</td><td>" + res + "</td></tr>")
+                                    $("#velocidad").val("");
+                                    $("#tiempo2").val("");
+                                });
+                                $("#limpiar2").click(function (e) {
+                                    e.preventDefault();
+                                    $("#auxiliar2").text("");
+                                });
+                            
+                                            
+                            });
+                        </script>
+                    </div>
+
+
+                </div>
+                <!--fin blaco-->
+            </div>
+            <!--fin verde-->
+
+
+        </div>
+        <div class="col-lg-4" style="background-color:rgba(168, 238, 153, 0.568)">
+            <h5 class="center">M.R.U.A </h5>
+
+            <div class="flex">
+                <div>
+                    En este caso, para calcula el espacio o distancia d que recorre un móvil con M.R.UA, tenemos que
+                    conocer la velocidad inicial, el tiempo que ha pasado
+                    y la aceleración que lleva, positiva o negativa en función de si está frenando o
+                    aumentando su velocidad.
+
+                    Como el tiempo está al cuadrado en la
+                    formula que determina el espacio,
+                    al representar espacio frente a tiempo
+                    no obtenemos una recta, sino una parábola,
+                    con una de las dos formas de la imagen,
+                    en función de si la aceleración es positiva o negativa.
+                    En este vídeo puedes consultar de forma resumida
+                    las diferencias entre los dos movimientos rectilíneos.
+                    <p>
+                        -
+                    </p>
+                    Son 5 fórmulas o ecuaciones para resolver problemas o ejercicios de mruv, de los cuales se puede
+                    utilizar cualquiera para encontrar cualquier variable, pero hay que saber cual ocupar y en que
+                    situaciones ocuparlas, porque hay ejercicios en los que dan cierta cantidad de datos, pero no
+                    dan precisamente los datos que se utilizan en una ecuación, por eso hay que saber seleccionar la
+                    formula que mas convenga.
+                    Vo = velocidad inicial, Vf = Velocidad final, a = aceleración, d = distancia recorrida
+                </div>
+                <div class="flex-none w-100">
+                    <img src="img/mrv.png">
+                </div>
+                <div>03</div>
+
+            </div>
+            <!--fin del bloque de color verde-->
+            <p>vacio</p>
+            <div class="bg-blue dark:bg-slate-500 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+                <div>
+                    <span class="inline-flex items-center justify-center p-2 bg-indigo-500 rounded-md shadow-lg">
+                        <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <!-- ... -->
+                        </svg>
+                    </span>
+                </div>
+
+
+                <div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <!-- ... -->
+
+    </div>
+
+
+
+    <!--PIE DE PAGINA -->
+    <footer class="p-4 bg-gray-50 sm:p-6 dark:bg-gray-800">
+        <div class="mx-auto max-w-screen-xl">
+            <div class="md:flex md:justify-between">
+                <div class="mb-6 md:mb-0">
+                    <a href="https://www.youtube.com/channel/UCQDxBT_Y75hlhvXhQ_D-sRQ" class="flex items-center"
+                        target="_blank">
+                        <img src="https://flowbite.com/docs/images/logo.svg" class="mr-3 h-8" alt="FlowBite Logo" />
+                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">video</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Resources</h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="https://flowbite.com" class="hover:underline">drive</a>
+                                <a href="https://www.youtube.com/channel/UCQDxBT_Y75hlhvXhQ_D-sRQ"
+                                    target="_blank">enlace</a>.
+                            </li>
+                            <li>
+                                <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">redes sociales
+                        </h2>
+                        <ul class="text-gray-600 dark:text-gray-400">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">autor</a>
+                            </li>
+                            <li>
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
